@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simulador de Tempo</title>
+  <title>Hud Jogo</title>
   <style>
     body {
       font-family: sans-serif;
@@ -75,12 +75,12 @@
 <body>
   <div id="hud-tempo">
     <div class="grupo-info">
-      <img class="icon" src="dia.png" alt="Dia" />
+      <img class="icon" src="imagens/dia.png" alt="Dia" />
       <span id="dia-texto">0000</span>
     </div>
 
     <div class="grupo-horario">
-      <img class="icon" id="emoji-img" src="noite.png" alt="Emoji" />
+      <img class="icon" id="emoji-img" src="imagens/noite.png" alt="Emoji" />
       <span id="hora-visivel">00:00</span>
       <div id="barra-container">
         <div id="barra-progresso"></div>
@@ -92,7 +92,7 @@
       <img
         id="btn-velocidade"
         class="icon"
-        src="velocidade1x.png"
+        src="imagens/velocidade1x.png"
         alt="Velocidade"
         title="Clique para mudar a velocidade"
       />
@@ -102,9 +102,9 @@
   <script>
     // Array com as velocidades e seus ícones
     const velocidades = [
-      { valor: 20, icone: "velocidade1x.png" },
-      { valor: 40, icone: "velocidade2x.png" },
-      { valor: 60, icone: "velocidade3x.png" },
+      { valor: 20, icone: "imagens/velocidade1x.png" },
+      { valor: 40, icone: "imagens/velocidade2x.png" },
+      { valor: 60, icone: "imagens/velocidade3x.png" },
     ];
 
     let indiceVelocidade = 0; // Começa com velocidade 1x
@@ -147,21 +147,21 @@
 
       if (horas >= 6 && horas < 12) {
         barra.style.backgroundColor = "#FFD700"; // manhã
-        emojiImg.src = "manha.png";
+        emojiImg.src = "imagens/manha.png";
         if (ultimoPeriodo !== "manha") {
           console.log(`🌅 Manhã começou: ${horarioTexto}`);
           ultimoPeriodo = "manha";
         }
       } else if (horas >= 12 && horas < 18) {
         barra.style.backgroundColor = "#FFA500"; // tarde
-        emojiImg.src = "tarde.png";
+        emojiImg.src = "imagens/tarde.png";
         if (ultimoPeriodo !== "tarde") {
           console.log(`🌞 Tarde começou: ${horarioTexto}`);
           ultimoPeriodo = "tarde";
         }
       } else {
         barra.style.backgroundColor = "#6A5ACD"; // noite
-        emojiImg.src = "noite.png";
+        emojiImg.src = "imagens/noite.png";
         if (ultimoPeriodo !== "noite") {
           console.log(`🌙 Noite começou: ${horarioTexto}`);
           ultimoPeriodo = "noite";
